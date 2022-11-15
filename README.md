@@ -1,4 +1,4 @@
-﻿# alipay_plugin
+﻿# flutter_alipay_hk
 香港支付宝支付插件
 
 ## 功能列表
