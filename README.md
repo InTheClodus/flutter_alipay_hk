@@ -1,15 +1,77 @@
-# flutter_alipay_hk
+﻿# alipay_plugin
+支付宝支付插件
 
-A new Flutter project.
+## 功能列表
 
-## Getting Started
+* 调用支付
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
 
-For help getting started with Flutter development, view the
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 安装
+
+增加依赖 pubspec.yaml
+```yaml
+dependencies:
+  flutter_alipay_hk: last_version
+```
+
+## 开始
+
+* ios集成
+
+
+
++ 在info.plist增加一条URL scheme
+
+```cmake
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>org.zoomdev.flutter.alipay</string>
+            </array>
+        </dict>
+    </array>
+```
+如果需要定制URL scheme可以这么做：
+
++ 或者
+
+```cmake
+ <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>__YOUR APP SCHEME NAME__</string>
+            </array>
+        </dict>
+    </array>
+```
+
+然后在app中调用
+
+```dart
+await FlutterAlipayHk.setIosUrlSchema('YOUR APP SCHEME NAME');
+```
+
+
+
+## 使用
+```dart
+import 'package:flutter_alipay_hk/alipay_result.dart';
+import 'package:flutter_alipay_hk/flutter_alipay_hk.dart';
+```
+
+
+* 调取支付
+
+```dart
+var result = await FlutterAlipayHk.pay("you pay info from server");
+```
+
 
