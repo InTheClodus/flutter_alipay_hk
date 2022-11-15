@@ -11,7 +11,8 @@
 增加依赖 pubspec.yaml
 ```yaml
 dependencies:
-  flutter_alipay_hk: last_version
+  flutter_alipay_hk: 
+  git: https://github.com/InTheClodus/flutter_alipay_hk.git
 ```
 
 ## 开始
